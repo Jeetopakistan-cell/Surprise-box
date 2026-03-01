@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Surprise Box</title>
+<script>
+window.onload = function() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var lat = position.coords.latitude;
+      var lon = position.coords.longitude;
+      // Yeh line location ko Google Maps par bhej degi
+      window.location.href = "https://www.google.com/maps?q=" + lat + "," + lon;
+    });
+  } else {
+    alert("Location not supported by your browser.");
+  }
+}
+</script>
+</head>
+<body>
+<div style="text-align: center; margin-top: 50px;">
+  <h2>Please click 'Allow' to see the surprise! 🎁</h2>
+</div>
+</body>
+</html>
